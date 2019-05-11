@@ -13,7 +13,7 @@ def get_time():
     return now.strftime("%Y-%m-%d %H:%M")
 
 def write_changelog(content):
-    content = content.replace('\n', '')
+    content = content.replace('\\n', '')
     content = content.strip('\\n')
     content = content.strip('\n')
     try:
