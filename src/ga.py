@@ -18,11 +18,11 @@ def write_changelog(content):
         f = open('changelog.txt', "a+")
         try:
             f.write(f"{content}\r\n")
-            print(f"wrote: {content} to changelog.txt")
+            print(f"wrote: {content} to changelog.txt\n")
         finally:
             f.close()
     except IOError:
-        print('failed to write to changelog.txt')
+        print('failed to write to changelog.txt\n')
   
     return
 
@@ -32,24 +32,26 @@ def git_add_command(comment):
 
     # Get the output from running my GA command.
     result = subprocess.run(['git', 'commit', '-a', '-m', comment[1]], stdout=subprocess.PIPE)
-    print(result.stdout)
+    print(f"{result.stdout}\n")
     
     # Change directory to this repo
     homedir = os.environ['HOME']
     os.chdir(f'{homedir}/Github/work-tracker/src')
-    print('Changed directory')
+    print(f'Changed directory to: {homedir}/Github/work-tracker/src\n')
 
     content = f'{get_time()}:  {result.stdout}'
     # Write the result to my changelog.txt file in this repo.
     write_changelog(content)
 
+    print('Running git commit -a -m "updating changelog.txt in work-tracker"\n')
     work_result = subprocess.run(['git', 'commit', '-a', '-m', "updating changelog"], stdout=subprocess.PIPE)
-    print(work_result.stdout)
+    print(f"Result from command: {work_result.stdout}\n")
 
+    print('Running git push in work-trakcer\n')
     push_result = subprocess.run(['git', 'push'], stdout=subprocess.PIPE)
-    print(push_result.stdout)
+    print(f"Result from command: {push_result.stdout}\n")
 
-    print(f'Changing back to {cwd}')
+    print(f'Changing back to {cwd}\n')
     os.chdir(cwd)
 
     return
