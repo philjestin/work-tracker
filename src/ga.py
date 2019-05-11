@@ -3,9 +3,10 @@
 import subprocess
 import os
 import datetime
+from sys import argv
 
 def main():
-  git_add_command()
+    git_add_command(argv)
 
 def get_time():
     now = datetime.datetime.now()
@@ -25,22 +26,23 @@ def write_changelog(content):
     return
 
 
-def git_add_command():
+def git_add_command(comment):
     cwd = os.getcwd()
 
     # Get the output from running my GA command.
-    result = subprocess.run(['git', 'commit', '-a'], stdout=subprocess.PIPE)
+    result = subprocess.run(['git', 'commit', '-a', '-m', comment[1]], stdout=subprocess.PIPE)
     print(result.stdout)
-
+    
     # Change directory to this repo
-    os.chdir(r'~/Github/work-tracker')
+    homedir = os.environ['HOME']
+    os.chdir(f'{homedir}/Github/work-tracker/src')
     print('Changed directory')
 
     content = f'{get_time()}:  {result.stdout}'
     # Write the result to my changelog.txt file in this repo.
     write_changelog(content)
 
-    work_result = subprocess.run(['git', 'commit', '-a'], stdout=subprocess.PIPE)
+    work_result = subprocess.run(['git', 'commit', '-a', '-m', "updating changelog"], stdout=subprocess.PIPE)
     print(work_result.stdout)
 
     push_result = subprocess.run(['git', 'push'], stdout=subprocess.PIPE)
