@@ -14,12 +14,10 @@ def get_time():
 
 def write_changelog(content):
     content = content.replace('\\n', '')
-    content = content.strip('\\n')
-    content = content.strip('\n')
     try:
         f = open('changelog.txt', "a+")
         try:
-            f.write(content)
+            f.write(f"{content}\r\n")
             print(f"wrote: {content} to changelog.txt")
         finally:
             f.close()
