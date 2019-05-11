@@ -12,7 +12,8 @@ def get_time():
     now = datetime.datetime.now()
     return now.strftime("%Y-%m-%d %H:%M")
 
-def write_changelog(content):    
+def write_changelog(content):
+    content = content.replace('\n', '')
     try:
         f = open('changelog.txt', "a+")
         try:
