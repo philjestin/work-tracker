@@ -1,4 +1,5 @@
 2019-05-10 22:37:  [master 4e26029] test 14 1 file changed, 3 insertions(+), 1 deletion(-)'
+<<<<<<< HEAD
 2019-05-23 20:32:  [master 39602cc] Made changes to include a server directory. just using npx babel-node server/app.js to start it for now. 9 files changed, 600 insertions(+), 133 deletions(-) create mode 100644 server/app.js create mode 100644 server/config/serverConfig.js create mode 100644 server/controllers/goals/index.js create mode 100644 server/models/goals/index.js create mode 100644 server/routes/goals/index.js delete mode 100644 tests/test.js'
 2019-05-23 20:38:  [master e99fce4] wtf 1 file changed, 1 insertion(+), 1 deletion(-)'
 2019-05-23 20:40:  [master a60e687] forgot to add the watch flag 1 file changed, 1 insertion(+), 1 deletion(-)'
@@ -13,3 +14,13 @@
 2019-09-08 12:13:  [master 479ca80] -n 11 files changed, 162 insertions(+), 9 deletions(-) create mode 100644 src/components/Dropdown/index.jsx create mode 100644 src/components/PivotTable/ColumnDimensionTable.jsx create mode 100644 src/components/PivotTable/RowDimensionTable.jsx create mode 100644 src/components/PivotTable/index.jsx create mode 100644 src/constants/shapes.js create mode 100644 src/utils/getUniqueValuesPerKey.js'
 2019-09-08 12:13:  On branch masterYour branch is ahead of \'origin/master\' by 1 commit.  (use "git push" to publish your local commits)nothing to commit, working tree clean'
 2019-09-13 13:49:  [master 5852abc] -n 3 files changed, 1326 insertions(+), 26 deletions(-)'
+=======
+2019-05-13 09:32:  [master 422c7d8] Updated the readme. 1 file changed, 6 insertions(+), 1 deletion(-)'
+2019-05-13 10:55:  '
+2019-05-23 15:44:  '
+2019-05-23 15:45:  '
+2019-05-23 15:49:  '
+2019-05-24 10:39:  '
+2019-05-24 12:01:  '
+2019-05-28 08:54:  '
+>>>>>>> 246f40663ce8541fe5fd003e168827a80194b5d1

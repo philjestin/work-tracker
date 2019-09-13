@@ -8,7 +8,12 @@ add ga.py to your PATH
 
 `mkdir -p ~/bin`
 
-`cp src/ga.py ~/bin`
+`cp src/ga.py ~/bin/gatr`
 
 Add $HOME/bin to your path
+
+
+Usage:
+
+gatr "commit message here"
 
